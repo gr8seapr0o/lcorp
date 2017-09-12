@@ -34,7 +34,7 @@
 				                            <div class="clear"></div>
 				                            <div class="work-skillsdate">
 				                                <p class="skills"><span class="label">Фильтр:</span> {{ $portfolio->filter->title }}</p>
-				                                <p class="workdate"><span class="label">Клиент:</span>{{ $portfolio->customer }}</p>
+				                                <p class="workdate"><span class="label">Автор:</span>{{ $portfolio->customer }}</p>
 				
 												@if($portfolio->created_at)
 													<p class="workdate"><span class="label">Год:</span>{{$portfolio->created_at->format('Y')}}</p>
@@ -42,7 +42,7 @@
 												@endif
 												
 				                            </div>
-				                            <a class="read-more" href="{{ route('portfolios.show',['alias' => $portfolio->alias]) }}">View Project</a>            
+				                            <a class="read-more" href="{{ route('portfolios.show',['alias' => $portfolio->alias]) }}">{{Lang::get('ru.view_project')}}</a>
 				                        </div>
 				                        <div class="clear"></div>
 				                    </div>
