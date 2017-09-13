@@ -2,13 +2,17 @@
 
 namespace Corp\Http\Controllers\Auth;
 
+
+
 use Corp\User;
+use Illuminate\Support\Facades\DB;
 use Validator;
+use Corp\Http\Controllers\SiteController;
 use Corp\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
+class AuthController extends SiteController
 {
     /*
     |--------------------------------------------------------------------------
@@ -30,11 +34,12 @@ class AuthController extends Controller
      */
      
      protected $loginView;
+     protected $registerView;
      
      protected $username = 'login'; //protected $username = 'login';
      
      
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -46,6 +51,7 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
         
         $this->loginView = env('THEME').'.login';
+        $this->registerView = env('THEME').'.auth/register';
     }
     
     
@@ -62,6 +68,20 @@ class AuthController extends Controller
         abort(404);
     }
 
+
+    public function showRegistrationForm()
+    {
+        $view  = property_exists($this, 'registerView')? $this->registerView : '';
+
+
+        if (view()->exists($view)) {
+            return view($view)->with('title', 'Регистрация');
+        }
+
+        abort(404);
+    }
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -74,6 +94,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'login' => 'required|max:16|unique:users',
         ]);
     }
 
@@ -85,10 +106,21 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+    $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+             'login' =>$data['login'],
         ]);
-    }
+   DB::insert('insert  into role_user (role_id, user_id) VALUES (3, ?)', [$user['id']] );
+       return $user;
+}
+
+
+
+
+
+
+
+
 }
