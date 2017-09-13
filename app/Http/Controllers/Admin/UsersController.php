@@ -28,7 +28,7 @@ class UsersController extends AdminController
             abort(403);
         }
 
-        $this->us_rep = $us_rep;
+            $this->us_rep = $us_rep;
         $this->rol_rep = $rol_rep;
 
         $this->template = env('THEME').'.admin.users';

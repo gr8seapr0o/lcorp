@@ -18,6 +18,8 @@ Route::resource('/','IndexController',[
 									]
 									]);								
 
+
+
 Route::resource('portfolios','PortfolioController',[
 													
 													'parameters' => [
@@ -52,6 +54,11 @@ Route::post('login','Auth\AuthController@login');
 Route::get('logout','Auth\AuthController@logout');
 
 
+
+Route::auth();
+
+
+
 //admin
 Route::group(['prefix' => 'admin','middleware'=> 'auth'],function() {
 	
@@ -73,3 +80,8 @@ Route::group(['prefix' => 'admin','middleware'=> 'auth'],function() {
 
 
 																						
+
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
