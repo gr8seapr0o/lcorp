@@ -118,6 +118,7 @@
                               <a href="/login">{!! Form::button('Войти', ['class' => 'btn btn-the-salmon-dance-2']) !!}</a>
 
                                 {!! Form::close() !!}
+                                    <a href="/register">Зарегистрироваться</a>
 
                                 @endif
 
@@ -126,8 +127,15 @@
                                     {!! Form::open(['method'=>'post'])!!}
 
                                     <a href="/logout">{!! Form::button('Выйти', ['class' => 'btn btn-french-5']) !!}</a>
-                                        <a href="/admin">{!! Form::button('Админка', ['class' => 'btn-fuji-splash-3']) !!}</a>
-                                    {!! Form::close() !!}
+                                        <h2>{{ Auth::user()->login }}</h2>
+
+                                        @if( Auth::user()->hasRole('Admin'))
+
+                                            <a href="/admin/articles">{!! Form::button('Админка', ['class' => 'btn-fuji-splash-3']) !!}</a>
+
+                                        @endif
+
+                                        {!! Form::close() !!}
 
                                 @endif
 

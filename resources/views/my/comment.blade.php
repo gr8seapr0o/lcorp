@@ -21,15 +21,15 @@
 				                                <div class="comment-body">
 				                                    <p>{{$item->text}}</p>
 				                                </div>
-				                                <div class="reply group">
-				                                    <a class="comment-reply-link" href="#respond" onclick="return addComment.moveForm(&quot;comment-{{$item->id}}&quot;, &quot;{{$item->id}}&quot;, &quot;respond&quot;, &quot;{{$item->article_id}}&quot;)">Reply</a>                    
+												<div class="reply group">
+													<a class="comment-reply-link" href="#respond" onclick="return addComment.moveForm(&quot;comment-{{$item->id}}&quot;, &quot;{{$item->id}}&quot;, &quot;respond&quot;, &quot;{{$item->article_id}}&quot;)">{{Lang::get('ru.reply')}}</a>
 				                                </div>
 				                                <!-- .reply -->
 				                            </div>
 				                            <!-- .comment-meta .commentmetadata -->
 				                        </div>
 				                        <!-- #comment-##  -->
-				                    	
+
 				                    	@if(isset($com[$item->id]))
 				                    		<ul class="children">
 				                    			@include(env('THEME').'.comment',['items'=>$com[$item->id]])

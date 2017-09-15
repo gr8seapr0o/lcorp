@@ -64,6 +64,9 @@
 
                                 <a href="/logout">{!! Form::button('LogOut', ['class' => 'btn btn-french-5']) !!}</a>
                                 {!! Form::close() !!}
+                                @if( Auth::check() )
+                                 <h2>{{ Auth::user()->login }}</h2>
+                                @endif
                             </div>
                         </div>
                         <div class="clearer"></div>

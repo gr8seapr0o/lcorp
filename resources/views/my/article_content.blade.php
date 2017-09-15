@@ -71,7 +71,8 @@
                                 
 				                <!-- END TRACKBACK & PINGBACK -->								
 				                <div id="respond">
-				                    <h3 id="reply-title">Оставить ответ <span>{{Lang::get('ru.reply')}}</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">{{Lang::get('ru.cancel_replay')}}</a></small></h3>
+				                    <h3 id="reply-title">Оставить ответ <span>{{Lang::get('ru.reply')}}</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">
+												{{Lang::get('ru.cancel_replay')}}</a></small></h3>
 				                    <form action="{{ route('comment.store') }}" method="post" id="commentform">
 				                        
 				                        @if(!Auth::check())
@@ -80,7 +81,7 @@
 					                        <p class="comment-form-url"><label for="url">Website</label><input id="url" name="site" type="text" value="" size="30" /></p>
 				                        @endif
 				                        
-				                        <p class="comment-form-comment"><label for="comment">{{Lang::get('ru.Your comment')}}</label><textarea id="comment" name="text" cols="45" rows="8"></textarea></p>
+				                        <p class="comment-form-comment"><label for="comment">{{Lang::get('ru.Your_comment')}}</label><textarea id="comment" name="text" cols="45" rows="8"></textarea></p>
 				                        <div class="clear"></div>
 				                        <p class="form-submit">
 				                        	
@@ -88,7 +89,7 @@
 				                        	{{ csrf_field() }}
 				                        	<input id="comment_post_ID" type="hidden" name="comment_post_ID" value="{{ $article->id }}" />
 				                        	<input id="comment_parent" type="hidden" name="comment_parent" value="0" />
-				                            <input name="submit" type="submit" id="submit" value="Post Comment" />
+				                            <input name="submit" type="submit" id="submit" value="{{Lang::get('ru.post_comment')}}" />
 				                        </p>
 				                    </form>
 				                </div>
