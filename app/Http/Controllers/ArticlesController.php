@@ -40,14 +40,15 @@ class ArticlesController extends SiteController
 
         $articles = $this->getArticles($cat_alias);
 
-        $content = view(env('THEME') . '.articles_content')->with('articles', $articles)->render();
+        $content = view(env('THEME') . '.articles_content',compact('articles'))->render();
         $this->vars = array_add($this->vars, 'content', $content);
 
         $comments = $this->getComments(config('settings.recent_comments'));
         $portfolios = $this->getPortfolios(config('settings.recent_portfolios'));
 
 
-        $this->contentRightBar = view(env('THEME') . '.articlesBar')->with(['comments' => $comments, 'portfolios' => $portfolios]);
+        $this->contentRightBar = view(env('THEME') . '.articlesBar', compact('comments', 'portfolios'));
+
 
 
         return $this->renderOutput();
@@ -119,7 +120,7 @@ class ArticlesController extends SiteController
         $portfolios = $this->getPortfolios(config('settings.recent_portfolios'));
 
 
-        $this->contentRightBar = view(env('THEME') . '.articlesBar')->with(['comments' => $comments, 'portfolios' => $portfolios]);
+        $this->contentRightBar = view(env('THEME') . '.articlesBar',compact('comments', 'portfolios'));
 
 
         return $this->renderOutput();
