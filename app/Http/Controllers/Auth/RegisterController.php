@@ -1,6 +1,7 @@
 <?php
 
 namespace Corp\Http\Controllers\Auth;
+
 use Corp\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Validator;
@@ -16,6 +17,7 @@ class RegisterController extends SiteController
 {
 
     protected $redirectTo = '/home';
+
     protected function redirectTo()
     {
         return '/home';
@@ -53,12 +55,11 @@ class RegisterController extends SiteController
             'login' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-             'remember_token' => $data['_token'],
+            'remember_token' => $data['_token'],
             'role_user' => $data['user_role'],
         ])->hasRole(3);
 
     }
-
 
 
     public function register(Request $request)
@@ -70,8 +71,6 @@ class RegisterController extends SiteController
         //$user->roles(3);
         return redirect('/');
     }
-
-
 
 
 }

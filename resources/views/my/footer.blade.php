@@ -1,4 +1,3 @@
-
 <div id="copyright">
 
     <div class="inner group">

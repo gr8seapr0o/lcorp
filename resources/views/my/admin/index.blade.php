@@ -1,9 +1,9 @@
 @extends(env('THEME').'.layouts.admin')
 
 @section('navigation')
-	{!! $navigation !!}
+    {!! $navigation !!}
 @endsection
 
 @section('footer')
-	{!! $footer !!}
+    {!! $footer !!}
 @endsection 

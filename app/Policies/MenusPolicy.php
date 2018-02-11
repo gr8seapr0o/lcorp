@@ -19,11 +19,11 @@ class MenusPolicy
     {
         //
     }
-    
-     public function save(User $user)
+
+    public function save(User $user)
     {
         //
-        
+
         return $user->canDo('EDIT_MENU');
     }
 }

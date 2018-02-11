@@ -7,20 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     //
-    
-    public function users() {
-	return $this->belongsToMany('Corp\User','role_user');
+
+    public function users()
+    {
+        return $this->belongsToMany('Corp\User', 'role_user');
 
     }
 
 
+    public function perms()
+    {
+        return $this->belongsToMany('Corp\Permission', 'permission_role');
+    }
 
-	public function perms() {
-		return $this->belongsToMany('Corp\Permission','permission_role');
-	}
-	
-	
-	public function hasPermission($name, $require = false)
+
+    public function hasPermission($name, $require = false)
     {
         if (is_array($name)) {
             foreach ($name as $permissionName) {
@@ -43,16 +44,16 @@ class Role extends Model
 
         return false;
     }
-    
-    public function savePermissions($inputPermissions) {
-		
-		if(!empty($inputPermissions)) {
-			$this->perms()->sync($inputPermissions);
-		}
-		else {
-			$this->perms()->detach();
-		}
-		
-		return TRUE;
-	}
+
+    public function savePermissions($inputPermissions)
+    {
+
+        if (!empty($inputPermissions)) {
+            $this->perms()->sync($inputPermissions);
+        } else {
+            $this->perms()->detach();
+        }
+
+        return TRUE;
+    }
 }

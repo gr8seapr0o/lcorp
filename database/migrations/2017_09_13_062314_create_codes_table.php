@@ -16,7 +16,7 @@ class CreateCodesTable extends Migration
             $table->increments('id');
 
             $table->tinyInteger('user_id')->unsigned();
-            $table->string('code',10);
+            $table->string('code', 10);
 
             $table->timestamps();
         });

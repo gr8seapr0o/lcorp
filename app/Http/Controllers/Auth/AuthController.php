@@ -3,7 +3,6 @@
 namespace Corp\Http\Controllers\Auth;
 
 
-
 use Corp\User;
 use Illuminate\Support\Facades\DB;
 use Validator;
@@ -32,13 +31,13 @@ class AuthController extends SiteController
      *
      * @var string
      */
-     
-     protected $loginView;
-     protected $registerView;
-     
-     protected $username = 'login'; //protected $username = 'login';
-     
-     
+
+    protected $loginView;
+    protected $registerView;
+
+    protected $username = 'login'; //protected $username = 'login';
+
+
     protected $redirectTo = '/';
 
     /**
@@ -49,16 +48,15 @@ class AuthController extends SiteController
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-        
-        $this->loginView = env('THEME').'.login';
-        $this->registerView = env('THEME').'.auth/register';
+
+        $this->loginView = env('THEME') . '.login';
+        $this->registerView = env('THEME') . '.auth/register';
     }
-    
-    
+
+
     public function showLoginForm()
     {
-        $view = property_exists($this, 'loginView')? $this->loginView : '';
-
+        $view = property_exists($this, 'loginView') ? $this->loginView : '';
 
 
         if (view()->exists($view)) {
@@ -71,7 +69,7 @@ class AuthController extends SiteController
 
     public function showRegistrationForm()
     {
-        $view  = property_exists($this, 'registerView')? $this->registerView : '';
+        $view = property_exists($this, 'registerView') ? $this->registerView : '';
 
 
         if (view()->exists($view)) {
@@ -85,7 +83,7 @@ class AuthController extends SiteController
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -101,26 +99,20 @@ class AuthController extends SiteController
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
     {
-    $user = User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-             'login' =>$data['login'],
+            'login' => $data['login'],
         ]);
-   DB::insert('insert  into role_user (role_id, user_id) VALUES (3, ?)', [$user['id']] );
-       return $user;
-}
-
-
-
-
-
-
+        DB::insert('insert  into role_user (role_id, user_id) VALUES (3, ?)', [$user['id']]);
+        return $user;
+    }
 
 
 }

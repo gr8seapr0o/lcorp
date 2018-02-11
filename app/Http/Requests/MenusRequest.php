@@ -25,7 +25,7 @@ class MenusRequest extends Request
     {
         return [
             //
-            'title'=>'required|max:255'
+            'title' => 'required|max:255'
         ];
     }
 }

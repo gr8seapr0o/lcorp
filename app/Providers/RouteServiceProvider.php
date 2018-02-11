@@ -19,35 +19,35 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param  \Illuminate\Routing\Router $router
      * @return void
      */
     public function boot(Router $router)
     {
         //
-		
-		$router->pattern('alias','[\w-]+');
-		
+
+        $router->pattern('alias', '[\w-]+');
+
         parent::boot($router);
-        
+
         $router->bind('articles', function ($value) {
-        	return \Corp\Article::where('alias',$value)->first();
+            return \Corp\Article::where('alias', $value)->first();
         });
-        
+
         $router->bind('menus', function ($value) {
-        	return \Corp\Menu::where('id',$value)->first();
+            return \Corp\Menu::where('id', $value)->first();
         });
-        
+
         $router->bind('users', function ($value) {
-		    return \Corp\User::find($value);
-		});
-   
+            return \Corp\User::find($value);
+        });
+
     }
 
     /**
      * Define the routes for the application.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param  \Illuminate\Routing\Router $router
      * @return void
      */
     public function map(Router $router)
@@ -62,7 +62,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes all receive session state, CSRF protection, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param  \Illuminate\Routing\Router $router
      * @return void
      */
     protected function mapWebRoutes(Router $router)

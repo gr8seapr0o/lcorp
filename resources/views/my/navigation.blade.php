@@ -1,12 +1,12 @@
 @if($menu)
-	<div class="menu classic">
+    <div class="menu classic">
 
 
-		<ul id="nav" class="menu">
+        <ul id="nav" class="menu">
 
-			@include(env('THEME').'.customMenuItems',['items'=>$menu->roots()])
+            @include(env('THEME').'.customMenuItems',['items'=>$menu->roots()])
 
-		</ul>
+        </ul>
 
-	</div>
+    </div>
 @endif

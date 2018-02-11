@@ -20,22 +20,21 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         //  @set($i,10)
-        Blade::directive('set',function($exp) {
-        	
-        	list($name,$val) = explode(',',$exp);
-        	
-        	return "<?php $name = $val ?>";
-        	
+        Blade::directive('set', function ($exp) {
+
+            list($name, $val) = explode(',', $exp);
+
+            return "<?php $name = $val ?>";
+
         });
-        
-        DB::listen(function($query) {
-        	
-        	//echo '<h1>'.$query->sql.'</h1>';
-        	
+
+        DB::listen(function ($query) {
+
+            //echo '<h1>'.$query->sql.'</h1>';
+
         });
-        
-  
-        
+
+
     }
 
     /**

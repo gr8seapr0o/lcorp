@@ -7,13 +7,15 @@
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
  */
-namespace  {
+
+namespace {
     exit("This file should not be included, only analyzed by your IDE");
 }
 
 namespace Illuminate\Support\Facades {
 
-    class App {
+    class App
+    {
 
         /**
          * Get the version number of the application.
@@ -1258,7 +1260,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Artisan {
+    class Artisan
+    {
 
         /**
          * Run the console application.
@@ -1395,7 +1398,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Auth {
+    class Auth
+    {
 
         /**
          * Attempt to get the guard from the local cache.
@@ -1898,7 +1902,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Blade {
+    class Blade
+    {
 
         /**
          * Compile the view at the given path.
@@ -2058,7 +2063,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Broadcast {
+    class Broadcast
+    {
 
         /**
          * Register the routes for handling broadcast authentication and sockets.
@@ -2170,7 +2176,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Bus {
+    class Bus
+    {
 
         /**
          * Dispatch a command to its appropriate handler.
@@ -2260,7 +2267,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Cache {
+    class Cache
+    {
 
         /**
          * Get a cache store instance by name.
@@ -2711,7 +2719,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Config {
+    class Config
+    {
 
         /**
          * Determine if the given configuration value exists.
@@ -2839,7 +2848,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Cookie {
+    class Cookie
+    {
 
         /**
          * Create a new cookie instance.
@@ -2966,7 +2976,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Crypt {
+    class Crypt
+    {
 
         /**
          * Determine if the given key and cipher combination is valid.
@@ -3046,7 +3057,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class DB {
+    class DB
+    {
 
         /**
          * Get a database connection instance.
@@ -3938,7 +3950,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Event {
+    class Event
+    {
 
         /**
          * Register an event listener with the dispatcher.
@@ -4118,7 +4131,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class File {
+    class File
+    {
 
         /**
          * Determine if a file or directory exists.
@@ -4578,7 +4592,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Gate {
+    class Gate
+    {
 
         /**
          * Determine if a given ability has been defined.
@@ -4734,7 +4749,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Hash {
+    class Hash
+    {
 
         /**
          * Hash the given value.
@@ -4791,7 +4807,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Lang {
+    class Lang
+    {
 
         /**
          * Determine if a translation exists for a given locale.
@@ -5078,7 +5095,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Log {
+    class Log
+    {
 
         /**
          * Adds a log record at the DEBUG level.
@@ -5315,7 +5333,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Mail {
+    class Mail
+    {
 
         /**
          * Set the global from address and name.
@@ -5559,7 +5578,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Notification {
+    class Notification
+    {
 
         /**
          * Send the given notification to the given notifiable entities.
@@ -5675,7 +5695,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Password {
+    class Password
+    {
 
         /**
          * Attempt to get the broker from the local cache.
@@ -5714,7 +5735,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Queue {
+    class Queue
+    {
 
         /**
          * Register an event listener for the before job event.
@@ -6038,7 +6060,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Redirect {
+    class Redirect
+    {
 
         /**
          * Create a new redirect response to the "home" route.
@@ -6207,7 +6230,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Request {
+    class Request
+    {
 
         /**
          * Create a new Illuminate HTTP request from server variables.
@@ -8045,7 +8069,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Response {
+    class Response
+    {
 
         /**
          * Return a new response from the application.
@@ -8251,7 +8276,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Route {
+    class Route
+    {
 
         /**
          * Register a new GET route with the router.
@@ -8930,7 +8956,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Schema {
+    class Schema
+    {
 
         /**
          * Determine if the given table exists.
@@ -9143,7 +9170,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Session {
+    class Session
+    {
 
         /**
          * Get the session configuration.
@@ -9707,7 +9735,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Storage {
+    class Storage
+    {
 
         /**
          * Get a filesystem instance.
@@ -10121,7 +10150,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class URL {
+    class URL
+    {
 
         /**
          * Get the full URL for the current request.
@@ -10472,7 +10502,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class Validator {
+    class Validator
+    {
 
         /**
          * Create a new Validator instance.
@@ -10594,7 +10625,8 @@ namespace Illuminate\Support\Facades {
 
     }
 
-    class View {
+    class View
+    {
 
         /**
          * Get the evaluated view contents for the given view.
@@ -11312,7 +11344,8 @@ namespace Illuminate\Support\Facades {
 
 namespace Illuminate\Database\Eloquent {
 
-    class Model {
+    class Model
+    {
 
         /**
          * Register a new global scope.
@@ -13255,72 +13288,137 @@ namespace Illuminate\Database\Eloquent {
 
 namespace {
 
-    class App extends \Illuminate\Support\Facades\App {}
+    class App extends \Illuminate\Support\Facades\App
+    {
+    }
 
-    class Artisan extends \Illuminate\Support\Facades\Artisan {}
+    class Artisan extends \Illuminate\Support\Facades\Artisan
+    {
+    }
 
-    class Auth extends \Illuminate\Support\Facades\Auth {}
+    class Auth extends \Illuminate\Support\Facades\Auth
+    {
+    }
 
-    class Blade extends \Illuminate\Support\Facades\Blade {}
+    class Blade extends \Illuminate\Support\Facades\Blade
+    {
+    }
 
-    class Broadcast extends \Illuminate\Support\Facades\Broadcast {}
+    class Broadcast extends \Illuminate\Support\Facades\Broadcast
+    {
+    }
 
-    class Bus extends \Illuminate\Support\Facades\Bus {}
+    class Bus extends \Illuminate\Support\Facades\Bus
+    {
+    }
 
-    class Cache extends \Illuminate\Support\Facades\Cache {}
+    class Cache extends \Illuminate\Support\Facades\Cache
+    {
+    }
 
-    class Config extends \Illuminate\Support\Facades\Config {}
+    class Config extends \Illuminate\Support\Facades\Config
+    {
+    }
 
-    class Cookie extends \Illuminate\Support\Facades\Cookie {}
+    class Cookie extends \Illuminate\Support\Facades\Cookie
+    {
+    }
 
-    class Crypt extends \Illuminate\Support\Facades\Crypt {}
+    class Crypt extends \Illuminate\Support\Facades\Crypt
+    {
+    }
 
-    class DB extends \Illuminate\Support\Facades\DB {}
+    class DB extends \Illuminate\Support\Facades\DB
+    {
+    }
 
-    class Event extends \Illuminate\Support\Facades\Event {}
+    class Event extends \Illuminate\Support\Facades\Event
+    {
+    }
 
-    class File extends \Illuminate\Support\Facades\File {}
+    class File extends \Illuminate\Support\Facades\File
+    {
+    }
 
-    class Gate extends \Illuminate\Support\Facades\Gate {}
+    class Gate extends \Illuminate\Support\Facades\Gate
+    {
+    }
 
-    class Hash extends \Illuminate\Support\Facades\Hash {}
+    class Hash extends \Illuminate\Support\Facades\Hash
+    {
+    }
 
-    class Lang extends \Illuminate\Support\Facades\Lang {}
+    class Lang extends \Illuminate\Support\Facades\Lang
+    {
+    }
 
-    class Log extends \Illuminate\Support\Facades\Log {}
+    class Log extends \Illuminate\Support\Facades\Log
+    {
+    }
 
-    class Mail extends \Illuminate\Support\Facades\Mail {}
+    class Mail extends \Illuminate\Support\Facades\Mail
+    {
+    }
 
-    class Notification extends \Illuminate\Support\Facades\Notification {}
+    class Notification extends \Illuminate\Support\Facades\Notification
+    {
+    }
 
-    class Password extends \Illuminate\Support\Facades\Password {}
+    class Password extends \Illuminate\Support\Facades\Password
+    {
+    }
 
-    class Queue extends \Illuminate\Support\Facades\Queue {}
+    class Queue extends \Illuminate\Support\Facades\Queue
+    {
+    }
 
-    class Redirect extends \Illuminate\Support\Facades\Redirect {}
+    class Redirect extends \Illuminate\Support\Facades\Redirect
+    {
+    }
 
-    class Request extends \Illuminate\Support\Facades\Request {}
+    class Request extends \Illuminate\Support\Facades\Request
+    {
+    }
 
-    class Response extends \Illuminate\Support\Facades\Response {}
+    class Response extends \Illuminate\Support\Facades\Response
+    {
+    }
 
-    class Route extends \Illuminate\Support\Facades\Route {}
+    class Route extends \Illuminate\Support\Facades\Route
+    {
+    }
 
-    class Schema extends \Illuminate\Support\Facades\Schema {}
+    class Schema extends \Illuminate\Support\Facades\Schema
+    {
+    }
 
-    class Session extends \Illuminate\Support\Facades\Session {}
+    class Session extends \Illuminate\Support\Facades\Session
+    {
+    }
 
-    class Storage extends \Illuminate\Support\Facades\Storage {}
+    class Storage extends \Illuminate\Support\Facades\Storage
+    {
+    }
 
-    class URL extends \Illuminate\Support\Facades\URL {}
+    class URL extends \Illuminate\Support\Facades\URL
+    {
+    }
 
-    class Validator extends \Illuminate\Support\Facades\Validator {}
+    class Validator extends \Illuminate\Support\Facades\Validator
+    {
+    }
 
-    class View extends \Illuminate\Support\Facades\View {}
+    class View extends \Illuminate\Support\Facades\View
+    {
+    }
 
-    class Eloquent extends \Illuminate\Database\Eloquent\Model {}
+    class Eloquent extends \Illuminate\Database\Eloquent\Model
+    {
+    }
 
 }
-namespace Illuminate\Support{
+
+namespace Illuminate\Support {
     /**
      * @method Fluent first()
      * @method Fluent after($column)
@@ -13336,5 +13434,7 @@ namespace Illuminate\Support{
      * @method Fluent references($value)
      * @method Fluent on($value)
      */
-    class Fluent {}
+    class Fluent
+    {
+    }
 }

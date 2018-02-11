@@ -1,7 +1,3 @@
-
-
-
-
 @extends(env('THEME').'.layouts.site')
 
 
@@ -11,51 +7,53 @@
 
 
 
-<div id="content-home" class="content group">
-				            <div class="hentry group">
-				            
-				            
-				            
-				            <form id="contact-form-contact-us" class="contact-form" method="POST" action="{{ url('/login') }}">
-				                    
-				                    {{ csrf_field() }}
-				                    <fieldset>
-				                        <ul>
-				                            <li class="text-field">
-				                                <label for="login">
-				                                <span class="label">Логин</span>
-				                                <br />					<span class="sublabel">Это имя</span><br />
-				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="login" id="login" class="required" value="" /></div>
-				                                 @if ($errors->has('login'))
-				                                    <span class="help-block">
+    <div id="content-home" class="content group">
+        <div class="hentry group">
+
+
+            <form id="contact-form-contact-us" class="contact-form" method="POST" action="{{ url('/login') }}">
+
+                {{ csrf_field() }}
+                <fieldset>
+                    <ul>
+                        <li class="text-field">
+                            <label for="login">
+                                <span class="label">Логин</span>
+                                <br/> <span class="sublabel">Это имя</span><br/>
+                            </label>
+                            <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input
+                                        type="text" name="login" id="login" class="required" value=""/></div>
+                            @if ($errors->has('login'))
+                                <span class="help-block">
 				                                        <strong>{{ $errors->first('login') }}</strong>
 				                                    </span>
-				                                @endif
-				                            </li>
+                            @endif
+                        </li>
 
-				                            
-				                            <li class="text-field">
-				                                <label for="password">
-				                                <span class="label">Пароль</span>
-				                                <br />					<span class="sublabel">Это поле для пароля</span><br />
-				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input type="password" id="password" name="password"  class="required" value="" /></div>
-				                                @if ($errors->has('name'))
-				                                    <span class="help-block">
+
+                        <li class="text-field">
+                            <label for="password">
+                                <span class="label">Пароль</span>
+                                <br/> <span class="sublabel">Это поле для пароля</span><br/>
+                            </label>
+                            <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input
+                                        type="password" id="password" name="password" class="required" value=""/></div>
+                            @if ($errors->has('name'))
+                                <span class="help-block">
 				                                        <strong>{{ $errors->first('name') }}</strong>
 				                                    </span>
-				                                @endif
-				                            </li>
-				                            <li class="submit-button">
-	
-				                                <input type="submit" name="yit_sendmail" value="{{ Lang::get('ru.Enter') }}" class="sendmail alignright" />
-				                            </li>
-				                        </ul>
-				                    </fieldset>
-				                </form>
-				            </div>
-				            
-</div>
+                            @endif
+                        </li>
+                        <li class="submit-button">
+
+                            <input type="submit" name="yit_sendmail" value="{{ Lang::get('ru.Enter') }}"
+                                   class="sendmail alignright"/>
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
 
 @endsection

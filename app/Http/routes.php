@@ -11,75 +11,68 @@
 |
 */
 
-Route::resource('/','IndexController',[
-									'only' =>['index'],
-									'names' => [
-										'index'=>'home'
-									]
-									]);								
+Route::resource('/', 'IndexController', [
+    'only' => ['index'],
+    'names' => [
+        'index' => 'home'
+    ]
+]);
 
 
+Route::resource('portfolios', 'PortfolioController', [
 
-Route::resource('portfolios','PortfolioController',[
-													
-													'parameters' => [
-													
-														'portfolios' => 'alias'
-													
-													]
-													
-													]);
+    'parameters' => [
 
-Route::resource('articles','ArticlesController',[
-												
-												'parameters'=>[
-												
-													'articles' => 'alias'
-												
-												]
-												
-												]);	
-Route::get('articles/cat/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'articlesCat'])->where('cat_alias','[\w-]+');   
+        'portfolios' => 'alias'
+
+    ]
+
+]);
+
+Route::resource('articles', 'ArticlesController', [
+
+    'parameters' => [
+
+        'articles' => 'alias'
+
+    ]
+
+]);
+Route::get('articles/cat/{cat_alias?}', ['uses' => 'ArticlesController@index', 'as' => 'articlesCat'])->where('cat_alias', '[\w-]+');
 
 
-Route::resource('comment','CommentController',['only'=>['store']]);
+Route::resource('comment', 'CommentController', ['only' => ['store']]);
 
-Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
+Route::match(['get', 'post'], '/contacts', ['uses' => 'ContactsController@index', 'as' => 'contacts']);
 
 //php artisan make:auth
-Route::get('login', ['uses' => 'Auth\AuthController@showLoginForm', 'as'=>'login']);
+Route::get('login', ['uses' => 'Auth\AuthController@showLoginForm', 'as' => 'login']);
 
-Route::post('login','Auth\AuthController@login');
+Route::post('login', 'Auth\AuthController@login');
 
-Route::get('logout','Auth\AuthController@logout');
-
+Route::get('logout', 'Auth\AuthController@logout');
 
 
 Route::auth();
 
 
-
 //admin
-Route::group(['prefix' => 'admin','middleware'=> 'auth'],function() {
-	
-	//admin
-	Route::get('/',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
-	
-	// articles
-	Route::resource('/articles','Admin\ArticlesController');
-	
-	Route::resource('/permissions','Admin\PermissionsController');
-	
-	Route::resource('/users','Admin\UsersController');
-	
-	//menus
-	Route::resource('/menus','Admin\MenusController');
-	
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+
+    //admin
+    Route::get('/', ['uses' => 'Admin\IndexController@index', 'as' => 'adminIndex']);
+
+    // articles
+    Route::resource('/articles', 'Admin\ArticlesController');
+
+    Route::resource('/permissions', 'Admin\PermissionsController');
+
+    Route::resource('/users', 'Admin\UsersController');
+
+    //menus
+    Route::resource('/menus', 'Admin\MenusController');
+
 });
-
-
-
-																						
 
 
 Route::auth();

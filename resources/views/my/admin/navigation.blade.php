@@ -1,8 +1,8 @@
 @if($menu)
-	<div class="menu classic">
-		
-		{!! $menu->asUl(['class'=>'menu']) !!}
+    <div class="menu classic">
 
-	</div>
+        {!! $menu->asUl(['class'=>'menu']) !!}
+
+    </div>
 @endif
 
